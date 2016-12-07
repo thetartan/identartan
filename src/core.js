@@ -1,7 +1,7 @@
 'use strict';
 
-var _ = require('lodash');
-var md5 = require('js-md5');
+var _ = require('./utils');
+var md5 = require('md5-o-matic');
 
 var defaultOptions = {
   colors: [], // Palette entries
@@ -101,7 +101,7 @@ function merge(stripes, colors, options) {
 function generate(string, options) {
   options = _.extend({}, defaultOptions, options);
 
-  var hash = md5.update(string).hex();
+  var hash = md5(string);
   var colors = options.colors;
   if (!_.isArray(colors)) {
     if (_.isObject(colors)) {

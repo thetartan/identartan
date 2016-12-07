@@ -1,6 +1,6 @@
 {
   "name": "identartan",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Identicon-like generator of tartan patterns.",
   "keywords": [
     "tartan",
@@ -35,8 +35,7 @@
     "url": "https://github.com/thetartan/identartan.git"
   },
   "dependencies": {
-    "js-md5": "^0.4.1",
-    "lodash": "^4.16.4"
+    "md5-o-matic": "^0.1.1"
   },
   "optionalDependencies": {
     "tartan": "^4.0.0"
@@ -46,6 +45,7 @@
     "eslint": "^3.9.1",
     "eslint-config-google": "^0.6.0",
     "json-loader": "^0.5.4",
+    "lodash": "^4.16.4",
     "mocha": "^3.1.2",
     "raw-loader": "^0.5.1",
     "val-loader": "^0.5.0",

@@ -1,8 +1,8 @@
 'use strict';
 
-var _ = require('lodash');
+var _ = require('./utils');
 var core = require('./core');
-var packageInfo = require('./package');
+var packageInfo = require('./@package');
 
 var tartan = null;
 try {
@@ -16,14 +16,11 @@ if (tartan) {
   module.exports = packageInfo;
 } else {
   module.exports = function(string, options) {
-    return _.chain(core.generate(string, options))
-      .map(function(item) {
-        return item.isPivot ?
-          item.name + '/' + item.count :
-          item.name + item.count;
-      })
-      .join(' ')
-      .value();
+    return _.join(_.map(core.generate(string, options), function(item) {
+      return item.isPivot ?
+        item.name + '/' + item.count :
+        item.name + item.count;
+    }), ' ');
   };
   _.extend(module.exports, packageInfo);
 }

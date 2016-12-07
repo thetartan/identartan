@@ -14,11 +14,9 @@ module.exports = {
       { test: /\.html$/, loader: 'raw' },
       { test: /\.json/, loader: 'json' },
 
-      // Evaluate module.js and bundle pre-calculated exports as a value.
+      // Evaluate @package.js and bundle pre-calculated exports as a value.
       // This allows to omit package.json from bundle.
-      { test: function(path) {
-        return path == __dirname + '/src/package.js';
-      }, loaders: ['raw', 'val'] }
+      { test: /[\\\/]@package\.js$/, loaders: ['raw', 'val'] }
     ]
   },
   output: { library: 'identartan', libraryTarget: 'umd' },

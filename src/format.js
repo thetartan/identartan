@@ -1,6 +1,6 @@
 'use strict';
 
-var _ = require('lodash');
+var _ = require('./utils');
 var index = require('./schema');
 var tartan = require('tartan');
 
@@ -24,7 +24,7 @@ var defaultOptions = {
         items[0] = formatPivot(items[0]);
         items[items.length - 1] = formatPivot(items[items.length - 1]);
       }
-      return _.chain(items).join(' ').trim().value();
+      return _.trim(_.join(items, ' '));
     }
   }
 };
