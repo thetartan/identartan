@@ -1,6 +1,6 @@
 {
   "name": "identartan",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Identicon-like generator of tartan patterns.",
   "keywords": [
     "tartan",
@@ -14,7 +14,6 @@
     "npm": "^2.0.0"
   },
   "scripts": {
-    "start": "xdg-open index.html",
     "test": "mocha tests/*.js tests/*/*.js",
     "build:dev": "NODE_ENV=development webpack --hide-modules --config webpack.config.development.js",
     "build:dist": "NODE_ENV=production webpack --hide-modules --config webpack.config.production.js",
@@ -38,7 +37,7 @@
     "md5-o-matic": "^0.1.1"
   },
   "optionalDependencies": {
-    "tartan": "^4.0.0"
+    "tartan": "^5.0.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
